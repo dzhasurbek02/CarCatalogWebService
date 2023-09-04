@@ -1,0 +1,11 @@
+{
+  "Version": 1,
+  "Hash": "2MKQTHoQ4UN1tGUo170uvwdi9ig9yjulLepNvJAMm2U=",
+  "Source": "CarCatalogWebService",
+  "BasePath": "_content/CarCatalogWebService",
+  "Mode": "Default",
+  "ManifestType": "Build",
+  "ReferencedProjectsConfiguration": [],
+  "DiscoveryPatterns": [],
+  "Assets": []
+}
