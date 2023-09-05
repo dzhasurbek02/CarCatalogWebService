@@ -1,10 +1,12 @@
 {
   "version": 2,
-  "dgSpecHash": "K9zjX7bw+jrNeUxgyKJwJOIu0WtHKGOhvk/N/RX1k6WHMcTSY8xgHKxfKuhQU//u7KzbDIUxCSNQX6yUII7aiA==",
+  "dgSpecHash": "k6viy7ghSx8N7DoCSjqX2h3FtpSVFCXUTFp+gTU0wY4vFvkWx87RXeGLkQq8XkseGpkljODotxs1R+YBQhXz8w==",
   "success": true,
   "projectFilePath": "D:\\Eskhata\\projects\\CarCatalogWebService\\CarCatalogWebService\\CarCatalogWebService.csproj",
   "expectedPackageFiles": [
+    "C:\\Users\\Asus\\.nuget\\packages\\automapper\\11.0.1\\automapper.11.0.1.nupkg.sha512",
     "C:\\Users\\Asus\\.nuget\\packages\\humanizer.core\\2.8.26\\humanizer.core.2.8.26.nupkg.sha512",
+    "C:\\Users\\Asus\\.nuget\\packages\\microsoft.csharp\\4.7.0\\microsoft.csharp.4.7.0.nupkg.sha512",
     "C:\\Users\\Asus\\.nuget\\packages\\microsoft.entityframeworkcore\\6.0.21\\microsoft.entityframeworkcore.6.0.21.nupkg.sha512",
     "C:\\Users\\Asus\\.nuget\\packages\\microsoft.entityframeworkcore.abstractions\\6.0.21\\microsoft.entityframeworkcore.abstractions.6.0.21.nupkg.sha512",
     "C:\\Users\\Asus\\.nuget\\packages\\microsoft.entityframeworkcore.analyzers\\6.0.21\\microsoft.entityframeworkcore.analyzers.6.0.21.nupkg.sha512",

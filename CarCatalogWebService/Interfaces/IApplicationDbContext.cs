@@ -1,17 +1,10 @@
-using System.Reflection;
-using CarCatalogWebService.Interfaces;
 using CarCatalogWebService.Models;
 using Microsoft.EntityFrameworkCore;
 
-namespace CarCatalogWebService.Context;
+namespace CarCatalogWebService.Interfaces;
 
-public class ApplicationDbContext : DbContext, IApplicationDbContext
+public interface IApplicationDbContext
 {
-    public ApplicationDbContext(DbContextOptions<ApplicationDbContext> options)
-        : base(options)
-    {
-    }
-
     public DbSet<BodyStyle> BodyStyles { get; set; }
     
     public DbSet<Brand> Brands { get; set; }
@@ -35,11 +28,4 @@ public class ApplicationDbContext : DbContext, IApplicationDbContext
     public DbSet<Transmission> Transmissions { get; set; }
     
     public DbSet<User> Users { get; set; }
-
-    protected override void OnModelCreating(ModelBuilder builder)
-    {
-        builder.ApplyConfigurationsFromAssembly(Assembly.GetExecutingAssembly());
-        
-        base.OnModelCreating(builder);
-    }
 }
