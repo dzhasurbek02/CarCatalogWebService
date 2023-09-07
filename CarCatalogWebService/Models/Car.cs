@@ -33,7 +33,7 @@ public class Car : AuditableBaseEntity
     public Guid CarColorId { get; set; }
     public CarColor CarColor { get; set; }
     
-    public string Description { get; set; }
+    public string? Description { get; set; }
     
     public float Price { get; set; }
     

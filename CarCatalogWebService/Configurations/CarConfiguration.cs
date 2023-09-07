@@ -9,7 +9,16 @@ public class CarConfiguration : IEntityTypeConfiguration<Car>
     public void Configure(EntityTypeBuilder<Car> builder)
     {
         builder.HasKey(c => c.Id);
-        
+
+        builder.Property(c => c.BranId)
+            .IsRequired();
+
+        builder.Property(c => c.CarModelId)
+            .IsRequired();
+
+        builder.Property(c => c.BodyStyleId)
+            .IsRequired();
+
         builder.Property(c => c.Year)
             .IsRequired();
         
@@ -22,7 +31,19 @@ public class CarConfiguration : IEntityTypeConfiguration<Car>
         
         builder.Property(c => c.HorsePower)
             .IsRequired();
-        
+
+        builder.Property(c => c.FuelTypeId)
+            .IsRequired();
+
+        builder.Property(c => c.TransmissionId)
+            .IsRequired();
+
+        builder.Property(c => c.DriveTrainId)
+            .IsRequired();
+
+        builder.Property(c => c.CarColorId)
+            .IsRequired();
+
         builder.Property(c => c.Description)
             .HasMaxLength(1000);
         
