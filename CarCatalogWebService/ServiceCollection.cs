@@ -1,4 +1,6 @@
 using System.Reflection;
+using CarCatalogWebService.Context;
+using CarCatalogWebService.Interfaces;
 using CarCatalogWebService.Services.Cars;
 using CarCatalogWebService.Services.Users;
 using FluentValidation;
@@ -12,6 +14,7 @@ public static class ServiceCollection
     {
         services.AddValidatorsFromAssembly(Assembly.GetExecutingAssembly());
         services.AddAutoMapper(Assembly.GetExecutingAssembly());
+        services.AddScoped<IApplicationDbContext, ApplicationDbContext>();
         services.AddScoped<ICarService, CarService>();
         services.AddScoped<IUserService, UserService>();
         
