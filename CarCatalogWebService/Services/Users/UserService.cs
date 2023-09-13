@@ -1,6 +1,7 @@
 using AutoMapper;
 using AutoMapper.QueryableExtensions;
 using CarCatalogWebService.Context;
+using CarCatalogWebService.Interfaces;
 using CarCatalogWebService.Models;
 using CarCatalogWebService.Services.Users.Requests;
 using CarCatalogWebService.Services.Users.Responses;
@@ -10,10 +11,10 @@ namespace CarCatalogWebService.Services.Users;
 
 public class UserService : IUserService
 {
-    private readonly ApplicationDbContext _context;
+    private readonly IApplicationDbContext _context;
     private readonly IMapper _mapper;
 
-    public UserService(ApplicationDbContext context, IMapper mapper)
+    public UserService(IApplicationDbContext context, IMapper mapper)
     {
         _context = context;
         _mapper = mapper;
