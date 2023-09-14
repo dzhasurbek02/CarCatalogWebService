@@ -1,3 +1,4 @@
+using CarCatalogWebService.Enums;
 using CarCatalogWebService.Models;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
@@ -13,5 +14,10 @@ public class DriveTrainConfiguration : IEntityTypeConfiguration<DriveTrain>
         builder.Property(dt => dt.Name)
             .IsRequired()
             .HasMaxLength(30);
+
+        builder.HasData(
+            new DriveTrain { Id = DriveTrainEnum.FWD.Value, Name = DriveTrainEnum.FWD.Name },
+            new DriveTrain { Id = DriveTrainEnum.RWD.Value, Name = DriveTrainEnum.RWD.Name },
+            new DriveTrain { Id = DriveTrainEnum.AWD.Value, Name = DriveTrainEnum.AWD.Name });
     }
 }
