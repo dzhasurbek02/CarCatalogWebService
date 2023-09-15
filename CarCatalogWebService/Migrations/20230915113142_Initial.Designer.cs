@@ -12,8 +12,8 @@ using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 namespace CarCatalogWebService.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20230913094045_InitialCreate")]
-    partial class InitialCreate
+    [Migration("20230915113142_Initial")]
+    partial class Initial
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -56,6 +56,29 @@ namespace CarCatalogWebService.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("BodyStyles");
+
+                    b.HasData(
+                        new
+                        {
+                            Id = new Guid("2b03ae77-d8e2-4e5c-9a6b-66f27e076488"),
+                            CreatedByUserId = new Guid("00000000-0000-0000-0000-000000000000"),
+                            CreatedDateTime = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Name = "Седан"
+                        },
+                        new
+                        {
+                            Id = new Guid("f4571a87-1587-4a22-9d9e-0e44f9e85557"),
+                            CreatedByUserId = new Guid("00000000-0000-0000-0000-000000000000"),
+                            CreatedDateTime = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Name = "Хэтчбек"
+                        },
+                        new
+                        {
+                            Id = new Guid("46729b9d-1ea7-42d9-934e-f5619d988467"),
+                            CreatedByUserId = new Guid("00000000-0000-0000-0000-000000000000"),
+                            CreatedDateTime = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Name = "Купе"
+                        });
                 });
 
             modelBuilder.Entity("CarCatalogWebService.Models.Brand", b =>
@@ -90,6 +113,29 @@ namespace CarCatalogWebService.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("Brands");
+
+                    b.HasData(
+                        new
+                        {
+                            Id = new Guid("5f1f8780-5b3c-441b-b042-1e89643b0d0b"),
+                            CreatedByUserId = new Guid("00000000-0000-0000-0000-000000000000"),
+                            CreatedDateTime = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Name = "Мерседес"
+                        },
+                        new
+                        {
+                            Id = new Guid("50945d15-834d-4192-b36c-8647418374a4"),
+                            CreatedByUserId = new Guid("00000000-0000-0000-0000-000000000000"),
+                            CreatedDateTime = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Name = "BMW"
+                        },
+                        new
+                        {
+                            Id = new Guid("d097d1f3-27f2-4d02-8f5e-63ec0443bb8e"),
+                            CreatedByUserId = new Guid("00000000-0000-0000-0000-000000000000"),
+                            CreatedDateTime = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Name = "Тойота"
+                        });
                 });
 
             modelBuilder.Entity("CarCatalogWebService.Models.Car", b =>
@@ -209,6 +255,43 @@ namespace CarCatalogWebService.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("CarColors");
+
+                    b.HasData(
+                        new
+                        {
+                            Id = new Guid("58023b94-502e-487f-a31c-21922c11e65a"),
+                            CreatedByUserId = new Guid("00000000-0000-0000-0000-000000000000"),
+                            CreatedDateTime = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Name = "Черный"
+                        },
+                        new
+                        {
+                            Id = new Guid("2d8d2025-a582-4b30-9147-f31b2e87da1c"),
+                            CreatedByUserId = new Guid("00000000-0000-0000-0000-000000000000"),
+                            CreatedDateTime = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Name = "Белый"
+                        },
+                        new
+                        {
+                            Id = new Guid("8d82f0ce-3ad9-47b6-b0b0-2c4e3f3a2f1c"),
+                            CreatedByUserId = new Guid("00000000-0000-0000-0000-000000000000"),
+                            CreatedDateTime = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Name = "Серый"
+                        },
+                        new
+                        {
+                            Id = new Guid("4941444e-ab6f-4147-b262-e9b5771c3d04"),
+                            CreatedByUserId = new Guid("00000000-0000-0000-0000-000000000000"),
+                            CreatedDateTime = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Name = "Синий"
+                        },
+                        new
+                        {
+                            Id = new Guid("048abfed-f78a-4ba0-963b-abdb33e950ac"),
+                            CreatedByUserId = new Guid("00000000-0000-0000-0000-000000000000"),
+                            CreatedDateTime = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Name = "Красный"
+                        });
                 });
 
             modelBuilder.Entity("CarCatalogWebService.Models.CarFeature", b =>
@@ -267,6 +350,8 @@ namespace CarCatalogWebService.Migrations
 
                     b.HasKey("Id");
 
+                    b.HasIndex("BrandId");
+
                     b.ToTable("CarModels");
                 });
 
@@ -302,6 +387,29 @@ namespace CarCatalogWebService.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("DriveTrains");
+
+                    b.HasData(
+                        new
+                        {
+                            Id = new Guid("f028158b-f8dc-4983-959f-1795af2b0a46"),
+                            CreatedByUserId = new Guid("00000000-0000-0000-0000-000000000000"),
+                            CreatedDateTime = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Name = "Передний привод"
+                        },
+                        new
+                        {
+                            Id = new Guid("7396ee6e-398b-4291-b010-1b224bf525f8"),
+                            CreatedByUserId = new Guid("00000000-0000-0000-0000-000000000000"),
+                            CreatedDateTime = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Name = "Задний привод"
+                        },
+                        new
+                        {
+                            Id = new Guid("16e03be9-03d6-4a4e-8376-3c51594f1c13"),
+                            CreatedByUserId = new Guid("00000000-0000-0000-0000-000000000000"),
+                            CreatedDateTime = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Name = "Полный привод"
+                        });
                 });
 
             modelBuilder.Entity("CarCatalogWebService.Models.Feature", b =>
@@ -370,6 +478,22 @@ namespace CarCatalogWebService.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("FuelTypes");
+
+                    b.HasData(
+                        new
+                        {
+                            Id = new Guid("c5d93893-609d-4905-acf1-de2a197ab507"),
+                            CreatedByUserId = new Guid("00000000-0000-0000-0000-000000000000"),
+                            CreatedDateTime = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Name = "Бензин"
+                        },
+                        new
+                        {
+                            Id = new Guid("a8627f4a-283d-4169-841d-003edeb29759"),
+                            CreatedByUserId = new Guid("00000000-0000-0000-0000-000000000000"),
+                            CreatedDateTime = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Name = "Дизель"
+                        });
                 });
 
             modelBuilder.Entity("CarCatalogWebService.Models.Photo", b =>
@@ -442,6 +566,22 @@ namespace CarCatalogWebService.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("Transmissions");
+
+                    b.HasData(
+                        new
+                        {
+                            Id = new Guid("18f2154f-8ffe-4acc-8692-f223a24b377b"),
+                            CreatedByUserId = new Guid("00000000-0000-0000-0000-000000000000"),
+                            CreatedDateTime = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Name = "АКП"
+                        },
+                        new
+                        {
+                            Id = new Guid("a6c95533-dbc4-4152-9bc3-869b94be888a"),
+                            CreatedByUserId = new Guid("00000000-0000-0000-0000-000000000000"),
+                            CreatedDateTime = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Name = "МКП"
+                        });
                 });
 
             modelBuilder.Entity("CarCatalogWebService.Models.User", b =>
@@ -548,6 +688,17 @@ namespace CarCatalogWebService.Migrations
                     b.Navigation("Car");
 
                     b.Navigation("Feature");
+                });
+
+            modelBuilder.Entity("CarCatalogWebService.Models.CarModel", b =>
+                {
+                    b.HasOne("CarCatalogWebService.Models.Brand", "Brand")
+                        .WithMany()
+                        .HasForeignKey("BrandId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Brand");
                 });
 
             modelBuilder.Entity("CarCatalogWebService.Models.Photo", b =>
