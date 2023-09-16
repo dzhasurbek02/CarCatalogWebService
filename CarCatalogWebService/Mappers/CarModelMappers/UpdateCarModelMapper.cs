@@ -8,6 +8,6 @@ public class UpdateCarModelMapper : Profile
 {
     public UpdateCarModelMapper()
     {
-        CreateMap<CreateCarModelRequest, CarModel>();
+        CreateMap<UpdateCarModelRequest, CarModel>();
     }
 }
