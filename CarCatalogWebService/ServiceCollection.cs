@@ -4,6 +4,7 @@ using CarCatalogWebService.Interfaces;
 using CarCatalogWebService.Services.CarModels;
 using CarCatalogWebService.Services.Cars;
 using CarCatalogWebService.Services.Features;
+using CarCatalogWebService.Services.Photos;
 using CarCatalogWebService.Services.Users;
 using FluentValidation;
 using Microsoft.Extensions.DependencyInjection;
@@ -21,6 +22,7 @@ public static class ServiceCollection
         services.AddScoped<IUserService, UserService>();
         services.AddScoped<ICarModelService, CarModelService>();
         services.AddScoped<IFeatureService, FeatureService>();
+        services.AddScoped<IPhotoService, PhotoService>();
         
         return services;
     }
