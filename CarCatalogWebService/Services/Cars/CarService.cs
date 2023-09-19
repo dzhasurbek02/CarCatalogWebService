@@ -1,6 +1,5 @@
 using AutoMapper;
 using AutoMapper.QueryableExtensions;
-using CarCatalogWebService.Context;
 using CarCatalogWebService.Interfaces;
 using CarCatalogWebService.Models;
 using CarCatalogWebService.Services.Cars.Requests;
@@ -25,6 +24,16 @@ public class CarService : ICarService
         var car = _mapper.Map<Car>(request);
 
         await _context.Cars.AddAsync(car);
+
+        var carFeatures = request.FeatureIds.Select(x => new CarFeature
+            {
+                CarId = car.Id,
+                FeatureId = x
+            })
+            .ToList();
+
+        await _context.CarFeatures.AddRangeAsync(carFeatures);
+        
         await _context.SaveChangesAsync();
     }
 
