@@ -27,4 +27,10 @@ public class CreateCarRequest
     public string Description { get; set; }
     
     public float Price { get; set; }
+    
+    public List<Guid>? FeatureIds { get; set; }
+    
+    public DateTime CreatedDateTime { get; set; }
+    
+    public Guid CreatedByUserId { get; set; }
 }
