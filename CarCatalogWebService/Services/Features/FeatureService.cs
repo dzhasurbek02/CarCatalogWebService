@@ -29,11 +29,11 @@ public class FeatureService : IFeatureService
 
     public async Task Update(UpdateFeatureRequest request)
     {
-        var feature = _context.Features
+        var feature = await _context.Features
             .FirstOrDefaultAsync(t => t.Id == request.Id)
                       ?? throw new Exception("Feature not found!");
 
-        await _mapper.Map(request, feature);
+        _mapper.Map(request, feature);
         await _context.SaveChangesAsync();
     }
 
