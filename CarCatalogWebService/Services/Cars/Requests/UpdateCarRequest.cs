@@ -29,4 +29,10 @@ public class UpdateCarRequest
     public string Description { get; set; }
     
     public float Price { get; set; }
+    
+    public List<Guid>? FeatureIds { get; set; }
+    
+    public DateTime UpdatedDateTime { get; set; }
+    
+    public Guid UpdatedByUserId { get; set; }
 }
