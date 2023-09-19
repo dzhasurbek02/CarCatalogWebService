@@ -10,12 +10,12 @@ public class CarConfiguration : IEntityTypeConfiguration<Car>
     {
         builder.HasKey(c => c.Id);
 
-        builder.Property(c => c.BranId)
+        builder.Property(c => c.BrandId)
             .IsRequired();
         
         builder.HasOne<Brand>(c => c.Brand)
             .WithMany(b => b.Cars)
-            .HasForeignKey(c => c.BranId)
+            .HasForeignKey(c => c.BrandId)
             .IsRequired()
             .OnDelete(DeleteBehavior.Restrict);
 
