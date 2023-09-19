@@ -15,6 +15,7 @@ public class GetCarMapper : Profile
             .ForMember(c=>c.FuelTypeName, t=>t.MapFrom(src=>$"{src.FuelType.Name}"))
             .ForMember(c=>c.TransmissionName, t=>t.MapFrom(src=>$"{src.Transmission.Name}"))
             .ForMember(c=>c.DriveTrainName, t=>t.MapFrom(src=>$"{src.DriveTrain.Name}"))
-            .ForMember(c=>c.CarColorName, t=>t.MapFrom(src=>$"{src.CarColor.Name}"));
+            .ForMember(c=>c.CarColorName, t=>t.MapFrom(src=>$"{src.CarColor.Name}"))
+            .ForMember(c => c.Features, t => t.MapFrom(f => f.CarFeatures!.Select(p => p.Feature)));
     }
 }
