@@ -1,6 +1,7 @@
 using System.Reflection;
 using CarCatalogWebService.Interfaces;
 using CarCatalogWebService.Models;
+using CarCatalogWebService.Models.BaseModels;
 using Microsoft.EntityFrameworkCore;
 
 namespace CarCatalogWebService.Context;
@@ -42,4 +43,22 @@ public class ApplicationDbContext : DbContext, IApplicationDbContext
         
         base.OnModelCreating(builder);
     }
+
+    /*public override Task<int> SaveChangesAsync(CancellationToken cancellationToken)
+    {
+        var entries = ChangeTracker.Entries();
+
+        foreach (var entry in entries)
+        {
+            if (entry.Entity is AuditableBaseEntity)
+            {
+                if (entry.State == EntityState.Added)
+                {
+                    
+                }
+            }
+        }
+        
+        return base.SaveChangesAsync(cancellationToken);
+    }*/
 }

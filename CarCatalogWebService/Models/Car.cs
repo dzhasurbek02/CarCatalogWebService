@@ -4,7 +4,7 @@ namespace CarCatalogWebService.Models;
 
 public class Car : AuditableBaseEntity
 {
-    public Guid BranId { get; set; }
+    public Guid BrandId { get; set; }
     public Brand Brand { get; set; }
     
     public Guid CarModelId { get; set; }
@@ -33,11 +33,11 @@ public class Car : AuditableBaseEntity
     public Guid CarColorId { get; set; }
     public CarColor CarColor { get; set; }
     
-    public string Description { get; set; }
+    public string? Description { get; set; }
     
     public float Price { get; set; }
     
-    public List<Photo> Photos { get; set; }
+    public List<Photo>? Photos { get; set; }
     
-    public List<CarFeature> CarFeatures { get; set; }
+    public List<CarFeature>? CarFeatures { get; set; }
 }

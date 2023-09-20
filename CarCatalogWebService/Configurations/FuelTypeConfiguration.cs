@@ -1,3 +1,4 @@
+using CarCatalogWebService.Enums;
 using CarCatalogWebService.Models;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
@@ -13,5 +14,9 @@ public class FuelTypeConfiguration : IEntityTypeConfiguration<FuelType>
         builder.Property(ft => ft.Name)
             .IsRequired()
             .HasMaxLength(30);
+
+        builder.HasData(
+            new FuelType { Id = FuelTypeEnum.Petrol.Value, Name = FuelTypeEnum.Petrol.Name },
+            new FuelType { Id = FuelTypeEnum.Diesel.Value, Name = FuelTypeEnum.Diesel.Name });
     }
 }

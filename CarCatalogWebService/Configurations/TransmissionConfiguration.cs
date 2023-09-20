@@ -1,3 +1,4 @@
+using CarCatalogWebService.Enums;
 using CarCatalogWebService.Models;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
@@ -13,5 +14,9 @@ public class TransmissionConfiguration : IEntityTypeConfiguration<Transmission>
         builder.Property(t => t.Name)
             .IsRequired()
             .HasMaxLength(30);
+
+        builder.HasData(
+            new Transmission { Id = TransmissionEnum.Automatic.Value, Name = TransmissionEnum.Automatic.Name },
+            new Transmission { Id = TransmissionEnum.Manual.Value, Name = TransmissionEnum.Manual.Name });
     }
 }
